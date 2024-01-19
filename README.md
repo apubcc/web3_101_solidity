@@ -45,7 +45,7 @@ Key Features of Solidity
 ```
 </details>
 
-### Basic Structure of a Solidity Contract
+### Basic Structure of a Solidity Contract 📝
 ```solidity
 // Specifies the Solidity version. This is to ensure that the contract does not get compiled with a newer compiler version that might introduce changes.
 pragma solidity ^0.8.0;
@@ -84,6 +84,42 @@ contract BasicContract {
 This example demonstrates a simple Solidity contract. It has a state variable, a constructor, two functions, and an event. The storeNumber function allows a number to be stored, and retrieveNumber allows it to be retrieved. The NumberChanged event is emitted whenever the number is changed, which can be useful for front-end applications interacting with this contract.
 
 Check out more at https://solidity-by-example.org/
+
+### Buidl Your own Token Contract 🚀
+```solidity
+// Specifies the version of Solidity.
+pragma solidity ^0.8.0;
+
+// SimpleToken contract that creates a basic ERC-20 token.
+contract SimpleToken {
+    string public name = "SimpleToken";
+    string public symbol = "SMT";
+    uint8 public decimals = 18;
+    uint256 public totalSupply;
+
+    // Records balances of each account.
+    mapping(address => uint256) public balanceOf;
+
+    // Event that is emitted when a transfer is made.
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    // Constructor sets the total supply and assigns it to transaction sender.
+    constructor(uint256 _initialSupply) {
+        totalSupply = _initialSupply * (10 ** uint256(decimals));
+        balanceOf[msg.sender] = totalSupply;
+        emit Transfer(address(0), msg.sender, totalSupply);
+    }
+
+    // Function to transfer tokens to a given address.
+    function transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value, "Insufficient balance");
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_to] += _value;
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+}
+```
 
 ### Using These Samples
 1. Open up [Remix](https://remix.ethereum.org), a no install Ethereum development environment in your browser.

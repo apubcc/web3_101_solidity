@@ -83,6 +83,8 @@ contract BasicContract {
 
 This example demonstrates a simple Solidity contract. It has a state variable, a constructor, two functions, and an event. The storeNumber function allows a number to be stored, and retrieveNumber allows it to be retrieved. The NumberChanged event is emitted whenever the number is changed, which can be useful for front-end applications interacting with this contract.
 
+Check out more at https://solidity-by-example.org/
+
 
 ### Using These Samples
 1. Open up [Remix](https://remix.ethereum.org), a no install Ethereum development environment in your browser.

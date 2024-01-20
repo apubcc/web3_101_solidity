@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 // Contract declaration. Think of this like a class in object-oriented programming.
-contract BasicContract {
+contract GMWorld {
 
     // State variable to store a number. Stored on the blockchain.
     uint private storedNumber;

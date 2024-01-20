@@ -92,8 +92,8 @@ pragma solidity ^0.8.0;
 
 // SimpleToken contract that creates a basic ERC-20 token.
 contract SimpleToken {
-    string public name = "SimpleToken";
-    string public symbol = "SMT";
+    string public name = "GMToken";
+    string public symbol = "GMT";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

@@ -51,7 +51,7 @@ Key Features of Solidity
 pragma solidity ^0.8.0;
 
 // Contract declaration. Think of this like a class in object-oriented programming.
-contract BasicContract {
+contract GMWorld {
 
     // State variable to store a number. Stored on the blockchain.
     uint private storedNumber;
@@ -91,7 +91,7 @@ Check out more at https://solidity-by-example.org/
 pragma solidity ^0.8.0;
 
 // SimpleToken contract that creates a basic ERC-20 token.
-contract SimpleToken {
+contract GMToken {
     string public name = "GMToken";
     string public symbol = "GMT";
     uint8 public decimals = 18;
